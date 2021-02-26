@@ -1,0 +1,15 @@
+An itemized list of additional features:
+
+1)  Shooting multiple bullets at various speeds with 3 types of guns.
+2)  Gradient for visual appeal
+3)  Gradiet shrinks with loss of health, thus making it hard to see
+4)  Color changing AI base on health
+5)  AI that overlaps and damages the player and 
+6)  Explosion
+7)  Explosions after death for one type of AI
+8)  Obsticles that are distructive and not destroyable types
+9)  Various aspect changing terrain; velocity annd health
+10) Randomized infinite number of enemies and limited randomized health
+11) Images for backgrounds
+12) Pausing functionaility with 'p' key and game over ad pause screes
+13) Different actors have different velocities

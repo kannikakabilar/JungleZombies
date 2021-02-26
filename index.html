@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta HTTP-EQUIV="EXPIRES" CONTENT="-1">
+        <script src="jquery-3.3.1.min.js"></script>
+        <script language="javascript" src="counterClient.js"></script>
+		<script language="javascript" src="model.js" > </script>
+		<script language="javascript" src="controller.js" > </script>
+		<title>Jungle of the Undead</title>
+
+        <style>
+			body {   
+                background: url('https://image.freepik.com/free-vector/realistic-tropical-leaves-wallpaper_23-2148392033.jpg') no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                color: white;
+                font-size: 20px;
+            }
+            #ui_login {display: true;}
+            #ui_counter {display: false;}
+            #ui_register {display: false;}
+			#ui_menu {display: false;}
+			#ui_menu input{
+                width: 100%;
+                background-color: chartreuse;
+                padding: 10px;
+                border: 4px solid black;
+                font-size: 20px;
+            }
+            #ui_menu input:hover{
+                background-color: #092405;
+                color: white;
+                cursor: pointer;
+            }
+			#update {display: false;}
+			#signup {display: false;}
+            #canvas {display: false;}
+			#scores {display: false;}
+        </style>
+	</head>
+	<body bgcolor=ffffff>
+		<h1 style="color:white; font-size:38px;" align = "center"> Jungle Zombies </h1>
+		<!-- <body bgcolor=ffffff onload="setupGame(); startGame();"> -->
+
+		<center>
+		<div id="ui_menu" style="float:left; padding: 25px 20px; background-color:darkSeaGreen; border:4px solid black;">
+			<input type="submit" id="profileSubmit" value="Profile" style="width:100%;"/></br></br>
+			<input type="submit" id="scoreSubmit" value="High Score" /></br></br>
+			<input type="submit" id="gameSubmit" value="Game" /></br></br>
+			<input type="submit" id="logoutSubmit" value="Logout" /></br></br>
+		</div>
+		</center>
+
+		<center>
+		<h2><div id="subtitle"> </div></h2>
+		</center>
+
+		<center>
+		<div id="scores">
+			<span id="topScores"></span>
+		</div>
+		</center>
+
+        <div id="ui_login">
+            <div><center>
+                <!-- https://www.tjvantoll.com/2013/01/01/enter-should-submit-forms-stop-messing-with-that/ -->
+                <input type="text" id="user" placeholder="User Name" />
+                <input type="password" id="password" placeholder="Password" />
+                <input type="submit" id="loginSubmit" value="Login"></br></br>
+                <input type="submit" id="registerSubmit" value="Register" /></br></br>
+                <span id="loginfail" style="color:red; font-size:20px;"></span>
+            </center></div>
+        </div>
+
+        <div id="ui_register">
+			<center>
+			Username:<input type="text" id="newuser" placeholder="User Name" />
+			Password:<input type="password" id="newpassword" placeholder="Password" /></br>
+			</br>Gender:
+			<input type="radio" id="Male" name="gender" value="Male" checked> <label for="Male">Male</label>
+			<input type="radio" id="Female" name="gender" value="Female"> <label for="Female">Female</label>
+			<input type="radio" id="Other" name="gender" value="Other"> <label for="Other">Other</label>
+			</br>
+			</br>Skill level: <select id="skill">
+			<option value="Beginner">Beginner</option>
+			<option value="Intermediate">Intermediate</option>
+			<option value="Expert">Expert</option>
+			</select></br></br>
+			Playtimes:
+			<input type="checkbox" name="time" value="Morning">
+			<label for="Morning"> Morning</label>
+			<input type="checkbox" name="time" value="Afternoon">
+			<label for="Afternoon"> Afternoon</label>
+			<input type="checkbox" name="time" value="Night" checked>
+			<label for="Night"> Night</label></br></br>
+			<div id=badLogin></div>
+<!-- <input type="submit" id="signupSubmit" value="Sign Up" /> -->
+		</center>
+		</div>
+
+		<div id="signup" align="center"> <input type="submit" id="signupSubmit" value="Sign Up" />
+		</br></br> <span id="regfail" style="color:red; font-size:20px;"> </span></div>
+
+		<div id="update" align="center"> <input type="submit" id="updateSubmit" value="Update" /></br>
+			</br><span id="updfail" style="color:red; font-size:20px;"> </span></br></br>
+		<input type="submit" id="deleteSubmit" value="Delete Account" align="center"/></div>
+
+
+		<div id="canvas">
+			<button type="button" onclick="grantPermissions();">Grant Permissions</button>
+			<center>
+			<canvas id="stage" width="800" height="800" style="border:1px solid White;"> </canvas>
+			</center>
+			<script>
+				//console.log($("#canvas").css(""));
+				//$("#canvas").load(function(){
+				//});
+			</script>
+			<span hidden id="gameScore"></span>
+		</div>
+	</body>
+</html>
+
